@@ -1,7 +1,9 @@
 <%-include("../../partials/header");-%>
-<div class="qr mt-4">    
+<div class="qr mt-4 box">    
     <h2 class="flex-item">QR CODE</h2>
+    <a href="<%= qr_code %>" download>
     <img class="flex-item" src=<%= qr_code %> width="250" alt="QR CODE"/>
-    <h3 class="flex-item">Take ScreenShot of the above QR</h3>
+    </a>
+    <h3 class="flex-item">Tap QR to download it </h3>
 </div>
     <%-include("../../partials/footer.ejs")-%>

@@ -1,0 +1,34 @@
+<%-include("../../partials/header");-%>
+
+    <form action="/" method="post" class="d-flex flex-row mt-3 box justify-content-evenly">     
+            <div class="m-5">
+            <h3>Name: <%=user.Name%></h3>
+            <img src="<%=qr_code%>" alt="" width="250">
+            </div>
+            
+            <div class="mt-4 exit-center">
+                <%const date = new Date();%>
+                
+                <%let day = date.getDate();%>
+                <%let month = date.getMonth() + 1;%>
+                <%let year = date.getFullYear();%>
+                
+                <%let currentDate = `${day}-${month}-${year}`;%>
+                <h4>Date : <%=currentDate%></h4>
+                
+                <div id="timer"></div>
+                <script>
+                    let start = Date.now();
+                    setInterval(() => {
+                      const time = Date.now() - start;
+                      const hours = Math.floor(time / (1000 * 60 * 60));
+                      const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+                      const seconds = Math.floor((time % (1000 * 60)) / 1000);
+                      document.getElementById("timer").innerHTML = `${hours}:${minutes}:${seconds}`;
+                    }, 1000);
+                  </script>
+            <button type="submit" class=" btn btn-warning mt-3 exit">EXIT</button>
+            </div>       
+    </form>
+
+<%-include("../../partials/footer.ejs")-%>

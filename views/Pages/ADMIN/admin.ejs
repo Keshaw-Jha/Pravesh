@@ -1,0 +1,11 @@
+<%-include("../../partials/header");-%>
+<div class="remove text-center d-flex flex-column qr_check box">
+    <form action="/admin" method="post" class="mt-5">
+        <h1>Enter scanned data here</h1>
+        <div class="m-3">
+        <input  name="filled_qr" type="string">
+        </div>
+        <button type="submit" class="m-2 btn btn-warning mb-3">CHECK</button>
+    </form>
+</div>
+<%-include("../../partials/footer.ejs")-%>
