@@ -1,0 +1,14 @@
+<%-include("../../partials/header");-%>
+<div class="remove text-center ">
+    <form action="/otp_page" method="post" class="mt-5">
+        <h1>Enter the OTP here</h1>
+        <div class="m-3">
+        <label for="">PHONE</label>
+        <input  name="phone" type="number" maxlength="10">
+        <label for="">OTP</label>
+        <input  name="filled_otp" type="number" maxlength="4">
+        </div>
+        <button name="otp_button" type="submit" class="m-2 btn btn-warning btn-lg">Submit</button>
+    </form>
+</div>
+<%-include("../../partials/footer.ejs")-%>
